@@ -14,6 +14,7 @@ resource "aws_instance" "elk-node-1" {
 
 }
 
+
 resource "aws_ebs_volume" "practice_1" {
   availability_zone = "eu-west-2c"
   size              = 1
