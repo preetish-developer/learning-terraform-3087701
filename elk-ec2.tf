@@ -1,5 +1,7 @@
 resource "aws_instance" "elk-node-1" {
 
+  count = 2
+
   ami = "ami-05c96317a6278cfaa"
   instance_type = "t2.micro"
   key_name = "master-key"
@@ -7,7 +9,7 @@ resource "aws_instance" "elk-node-1" {
   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
 
   tags = {
-    Name = "dxm-logstash-node-1"
+    Name = "dxm-logstash-node-"+count.index
   }
 
 }
