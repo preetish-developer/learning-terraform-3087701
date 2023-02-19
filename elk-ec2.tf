@@ -37,12 +37,12 @@ resource "aws_volume_attachment" "practice_volume_1" {
 
   device_name = "/dev/sdf"
   volume_id   = aws_ebs_volume.practice_1.id
-  instance_id = aws_instance.elk-node-1.id
+  instance_id = aws_instance.elk-node-1[0].id
 }
 
 resource "aws_volume_attachment" "practice_volume_2" {
 
   device_name = "/dev/sdf"
   volume_id   = aws_ebs_volume.practice_2.id
-  instance_id = aws_instance.elk-node-1.id
+  instance_id = aws_instance.elk-node-1[1].id
 }
