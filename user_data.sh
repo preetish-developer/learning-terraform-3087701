@@ -12,4 +12,4 @@ http.createServer(function (req, res) {
 }).listen(9350);
 END
 
-sudo node index.js &
+sudo nohup node index.js > /dev/null &
