@@ -1,6 +1,10 @@
 #!/bin/sh
-sudo yum -y install nodejs npm
-sudo npm init -y
+sudo su
+yum -y install nodejs npm
+sleep 10
+
+npm init -y
+sleep 5
 
 tee -a index.js > /dev/null <<END
 var http = require('http');
@@ -11,5 +15,7 @@ http.createServer(function (req, res) {
   res.end();
 }).listen(9350);
 END
+sleep 5
 
-sudo nohup node index.js > /dev/null &
+nohup node index.js > /dev/null &
+exit
