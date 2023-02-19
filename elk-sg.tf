@@ -15,7 +15,7 @@ resource "aws_security_group_rule" "for_ssh" {
   security_group_id = aws_security_group.dxm-logstash-sg.id
 }
 
-resource "aws_security_group_rule" "for_ssh" {
+resource "aws_security_group_rule" "for_nodejs" {
   type              = "ingress"
   from_port         = 9350
   to_port           = 9350
