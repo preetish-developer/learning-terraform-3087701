@@ -9,7 +9,7 @@ resource "aws_instance" "elk-node-1" {
   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
 
   tags = {
-    Name = "dxm-logstash-node-"+"${count.index}"
+    Name = var.node_names[count.index]
   }
 
 }

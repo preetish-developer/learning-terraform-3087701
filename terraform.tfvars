@@ -1,0 +1,1 @@
+node_names = ["dxm-logstash-node-1","dxm-logstash-node-2"]
