@@ -26,7 +26,7 @@ resource "aws_security_group_rule" "for_nodejs" {
   security_group_id = aws_security_group.dxm-logstash-sg.id
 }
 
-resource "aws_security_group_rule" "for_yum" {
+resource "aws_security_group_rule" "for_yum_repos" {
   type              = "egress"
   from_port         = 443
   to_port           = 443
