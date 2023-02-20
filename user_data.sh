@@ -18,4 +18,8 @@ END
 sleep 5
 
 nohup node index.js > /dev/null &
+
+# To be used for formatting new disk: sudo fdisk -l
+# sudo mkfs -t ext4 /dev/xvdf
+
 exit

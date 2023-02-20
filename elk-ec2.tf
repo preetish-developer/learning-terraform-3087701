@@ -15,34 +15,34 @@ resource "aws_instance" "elk-node-1" {
 }
 
 
-resource "aws_ebs_volume" "practice_1" {
-  availability_zone = "eu-west-2c"
-  size              = 1
+# resource "aws_ebs_volume" "practice_1" {
+#   availability_zone = "eu-west-2c"
+#   size              = 1
 
-  tags = {
-    Name = "for practice mount point"
-  }
-}
+#   tags = {
+#     Name = "for practice mount point"
+#   }
+# }
 
-resource "aws_ebs_volume" "practice_2" {
-  availability_zone = "eu-west-2c"
-  size              = 1
+# resource "aws_ebs_volume" "practice_2" {
+#   availability_zone = "eu-west-2c"
+#   size              = 1
 
-  tags = {
-    Name = "for practice mount point"
-  }
-}
+#   tags = {
+#     Name = "for practice mount point"
+#   }
+# }
 
-resource "aws_volume_attachment" "practice_volume_1" {
+# resource "aws_volume_attachment" "practice_volume_1" {
 
-  device_name = "/dev/sdf"
-  volume_id   = aws_ebs_volume.practice_1.id
-  instance_id = aws_instance.elk-node-1[0].id
-}
+#   device_name = "/dev/sdf"
+#   volume_id   = aws_ebs_volume.practice_1.id
+#   instance_id = aws_instance.elk-node-1[0].id
+# }
 
-resource "aws_volume_attachment" "practice_volume_2" {
+# resource "aws_volume_attachment" "practice_volume_2" {
 
-  device_name = "/dev/sdf"
-  volume_id   = aws_ebs_volume.practice_2.id
-  instance_id = aws_instance.elk-node-1[1].id
-}
+#   device_name = "/dev/sdf"
+#   volume_id   = aws_ebs_volume.practice_2.id
+#   instance_id = aws_instance.elk-node-1[1].id
+# }
