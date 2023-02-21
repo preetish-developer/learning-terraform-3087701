@@ -4,7 +4,7 @@ resource "aws_lb" "logstash-nlb" {
   load_balancer_type = "network"
   subnets            = ["subnet-0db9f6ca7703275f7","subnet-0a421dd631424f498","subnet-0813f4a73d59f8efe"]
 
-  enable_deletion_protection = true
+  enable_deletion_protection = false
 
 }
 
