@@ -4,34 +4,6 @@ resource "aws_security_group" "dxm-logstash-sg" {
   description = "SG for logstash instance"
 }
 
-# resource "aws_security_group" "nlb-sg" {
-  
-#   name        = "dxm-logstash-nlb-sg"
-#   description = "SG for Network load balancer"
-# }
-
-# resource "aws_security_group_rule" "ingress-for-nlb" {
-#   type              = "ingress"
-#   from_port         = 443
-#   to_port           = 443
-#   protocol          = "tcp"
-#   cidr_blocks       = ["0.0.0.0/0"]
-#   description       = "Ingress for NLB"
-  
-#   security_group_id = aws_security_group.nlb-sg.id
-# }
-
-# resource "aws_security_group_rule" "egress-for-nlb" {
-#   type                      = "egress"
-#   from_port                 = 9350
-#   to_port                   = 9350
-#   protocol                  = "tcp"
-#   source_security_group_id  = aws_security_group.dxm-logstash-sg.id
-#   description               = "Ingress for NLB"
-  
-#   security_group_id = aws_security_group.nlb-sg.id
-# }
-
 resource "aws_security_group_rule" "for_ssh" {
   type              = "ingress"
   from_port         = 22

@@ -5,3 +5,7 @@ output "instance_id_1" {
 output "instance_id_2" {
   value = aws_instance.elk-node-1[1].id
 }
+
+output "nlb_dns" {
+  value = aws_lb.logstash-nlb.dns_name
+}

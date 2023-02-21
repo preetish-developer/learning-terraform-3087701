@@ -23,7 +23,7 @@ resource "aws_lb_listener" "https-listener" {
 }
 
 resource "aws_lb_target_group" "logstash-nlb-tg" {
-  name     = "logstash-nlb-sg"
+  name     = "logstash-nlb-tg"
   port     = 9350
   protocol = "TLS"
   vpc_id   = "vpc-05fcf95ab8a0060c7"
