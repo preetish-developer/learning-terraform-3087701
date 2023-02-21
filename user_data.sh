@@ -24,7 +24,7 @@ https.createServer(options, (req, res) => {
 END
 sleep 5
 
-tee -a nl2.cer > /dev/null <<END
+tee -a nlb2.cer > /dev/null <<END
 -----BEGIN CERTIFICATE-----
 MIIFnzCCA4egAwIBAgIJAOTkheJH4kIgMA0GCSqGSIb3DQEBCwUAMG4xCzAJBgNV
 BAYTAkdCMQswCQYDVQQIDAJORTERMA8GA1UEBwwIR09TRk9SVEgxDDAKBgNVBAoM
@@ -60,7 +60,7 @@ oglS
 -----END CERTIFICATE-----
 END
 
-tee -a nl2.key > /dev/null <<END
+tee -a nlb2.key > /dev/null <<END
 -----BEGIN PRIVATE KEY-----
 MIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDHMbFp1Z0ESYkz
 YQ0Si7v/4M24QYF9B+8K4j4cCICsCSC3UvlBWDU967UGo/uEBnUwbsXNyzM7y33k
