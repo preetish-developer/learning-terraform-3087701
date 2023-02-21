@@ -14,6 +14,18 @@ resource "aws_instance" "elk-node-1" {
 
 }
 
+resource "aws_instance" "for_api_execute" {
+
+  ami = "ami-05c96317a6278cfaa"
+  instance_type = "t2.micro"
+  key_name = "master-key"
+  vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
+
+  tags = {
+    Name = "internal-query"
+  }
+
+}
 
 # resource "aws_ebs_volume" "practice_1" {
 #   availability_zone = "eu-west-2c"
