@@ -23,15 +23,10 @@ resource "aws_lb_listener" "https-listener" {
 }
 
 resource "aws_lb_target_group" "logstash-nlb-tg" {
-  name     = "logstash-nlb-tg"
+  name     = "logstash-nlb-tg-2"
   port     = 9350
   protocol = "TCP"
   vpc_id   = "vpc-05fcf95ab8a0060c7"
-
-   lifecycle {
-      create_before_destroy = true
-      ignore_changes        = [name]
-    }
 }
 
 resource "aws_lb_target_group_attachment" "node-1" {
