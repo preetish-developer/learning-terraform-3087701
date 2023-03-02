@@ -18,8 +18,12 @@ resource "aws_instance" "for_api_execute" {
 
   ami = "ami-05c96317a6278cfaa"
   
+  # For NodeJS
   # instance_type = "t2.micro"
+  
+  # For ELK
   instance_type = "t3a.medium"
+  user_data = "${file("elk-user-data.sh")}"
 
   key_name = "master-key"
   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
