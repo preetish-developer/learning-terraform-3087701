@@ -23,7 +23,7 @@ resource "aws_instance" "for_api_execute" {
   # instance_type = "t2.micro"
   
   # For ELK
-  ami = "ami-0b1d1cf077dd5fbb0"
+  ami = "ami-0355757c0cb526b17"
   instance_type = "t3a.medium"  
   # user_data = "${file("elk-user-data.sh")}"
 
