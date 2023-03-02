@@ -19,7 +19,7 @@ resource "aws_instance" "for_api_execute" {
   ami = "ami-05c96317a6278cfaa"
   
   # instance_type = "t2.micro"
-  instance_type = "t4g.small"
+  instance_type = "t3a.small"
 
   key_name = "master-key"
   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
