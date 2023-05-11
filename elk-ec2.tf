@@ -14,27 +14,41 @@
 
 # }
 
-resource "aws_instance" "for_api_execute" {
-
+resource "aws_instance" "nginx-server" {  
   
-  
-  # For NodeJS
-  # ami = "ami-05c96317a6278cfaa"
-  # instance_type = "t2.micro"
-  
-  # For ELK
-  ami = "ami-0355757c0cb526b17"
-  instance_type = "t3a.medium"  
-  # user_data = "${file("elk-user-data.sh")}"
+  # For Nginx. ubuntu server
+  ami = "ami-09744628bed84e434"
+  instance_type = "t2.micro"  
+  user_data = "${file("nginx-user-data.sh")}"
 
   key_name = "master-key"
   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
 
   tags = {
-    Name = "internal-query"
+    Name = "nginx-server"
   }
-
 }
+
+
+# resource "aws_instance" "for_api_execute" {
+ 
+#   # For NodeJS
+#   # ami = "ami-05c96317a6278cfaa"
+#   # instance_type = "t2.micro"
+  
+#   # For ELK
+#   ami = "ami-0355757c0cb526b17"
+#   instance_type = "t3a.medium"  
+#   user_data = "${file("elk-user-data.sh")}"
+
+#   key_name = "master-key"
+#   vpc_security_group_ids = [aws_security_group.dxm-logstash-sg.id]
+
+#   tags = {
+#     Name = "internal-query"
+#   }
+
+# }
 
 # resource "aws_ebs_volume" "practice_1" {
 #   availability_zone = "eu-west-2c"
