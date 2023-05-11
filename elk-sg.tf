@@ -61,3 +61,14 @@ resource "aws_security_group_rule" "for_yum_repos" {
   
   security_group_id = aws_security_group.dxm-logstash-sg.id
 }
+
+resource "aws_security_group_rule" "for_yum_repos_http" {
+  type              = "egress"
+  from_port         = 80
+  to_port           = 80
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  description       = "for yum repos non SSL"
+  
+  security_group_id = aws_security_group.dxm-logstash-sg.id
+}
